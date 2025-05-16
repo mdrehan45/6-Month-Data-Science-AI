@@ -1,0 +1,18 @@
+*Description:-
+
+*Introduction of Python:-
+                      - python is a high level , easy to learn programming language that is widely used in Data science .
+- Python have easy to Write & Read Syntax.
+- Python have large no.of labraries.
+-Strong communication Supports.
+
+*Why Python For Data Science:-
+                           -In Data Science Python is Used to collect,clean,analyze,visualize and help to predict data.
+-It's used Labraries like 
+Pandas
+Numpy
+Matplotib
+Scikit-learn
+
+*Pyhton-TypeCasting:-
+                   -Type Casting in Python refers to the process of converting the data type of a variable from one type to another, such as from a string to an integer, a float to an integer, etc.
