@@ -14,6 +14,22 @@ Numpy
 Matplotib
 Scikit-learn
 
+^^^^
+# Variaables and DataTypes :-
+                            - Variables are containers for storing data values.
+                            - You don’t need to declare the type; Python automatically understands it.
+                            - python variables are case sensitive.
+                            - pyhton allow assinging values to multiple variables in a single line.
+*Example:-
+x = 10 ----> x is name of the variable and 10 is value store in x variable.
+
+*Datatype :-
+x = " hello " ----> String
+y = 10  -----> integer
+z = 3.4 -----> float
+a = True ----> Boolean
+b = 1+2j ----> Complex
+
 *Pyhton-TypeCasting:-
                    -Type Casting in Python refers to the process of converting the data type of a variable from one type to another, such as from a string to an integer, a float to an integer, etc.
 
@@ -60,8 +76,18 @@ data structure = collection of data types.
 - remove(value) deletes the first matching value (does not return it).
 7) insert():-
 - insert(index, value) adds a value at the specified index in the list without replacing existing elements.
-
-
+8) extned():-
+-extend() adds each element from another list to the end of the current list.
+9) reverse() :-
+- reverse() reverses the elements of the list in place (modifies the original list).
+10) sort() :-
+- sort() arranges the elements of a list in ascending (default) or descending order.
+11) clear() :-
+- clear() removes all elements from the list, making it an empty list.
+12) del listname :-
+- del deletes the entire list from memory (not just its contents).
+13) len() :-
+- len() returns the total number of items in a list.
 
 
 
