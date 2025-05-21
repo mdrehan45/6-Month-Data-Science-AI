@@ -89,5 +89,13 @@ data structure = collection of data types.
 13) len() :-
 - len() returns the total number of items in a list.
 
+^^^^^
+#pyhton indexing :-
+- pyhton index begins with 0 .
+- index can be divided into 3 part.
+1) forword indexing -- left to right.
+2) backword indexing -- right to left.
+3) step indexing -- every step count jumpes.
+
 
 
