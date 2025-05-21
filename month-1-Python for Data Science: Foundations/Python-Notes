@@ -97,5 +97,19 @@ data structure = collection of data types.
 2) backword indexing -- right to left.
 3) step indexing -- every step count jumpes.
 
+^^^^^
+#Tuple :-
+
+-Tuple is an ordered collection of elements.
+-Tuple are immutable.
+-Once created, you cannot change its values.
+ex----> tup1 = (1,2,3,4,"rehan") # tuple
+
+🔹 Only 2 Built-in Tuple Methods:
+1) count(x)	:-
+-Counts how many times x appears	
+2)index(x) :-
+-Returns the first index where x is located	.
+
 
 
