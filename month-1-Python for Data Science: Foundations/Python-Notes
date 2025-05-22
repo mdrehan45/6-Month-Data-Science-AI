@@ -111,5 +111,27 @@ ex----> tup1 = (1,2,3,4,"rehan") # tuple
 2)index(x) :-
 -Returns the first index where x is located	.
 
+# Dictionary :-
+- Dictionary is an unordered collection of key values pairs enclosed with {}.
+- Dict is Mutable.
+- keys() :-
+-Returns a view of all the keys.
+- values() :-
+- Returns a view of all the values.
+- update() :-
+- Updates dictionary with another dictionary or key-value pair.
+- pop():-
+- Removes a key and returns its value.
+- clear() :-
+- clear all dict elements.
 
+# Set :-
+- set is an unorderd collection of elemnts enclosed in {}.
+- Duplicates are not allowed in set.
+- Automatically removes repeated items
+- s.add(4) - add new element
+- s.remove(2)  # remove if found , Error if not found
+- s.discard(5) # No error if not found
+- s.union(s2) # Combines sets (all unique elements)
+- intersection() # print Common elements from two sets
 
