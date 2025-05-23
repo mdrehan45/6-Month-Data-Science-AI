@@ -134,4 +134,10 @@ ex----> tup1 = (1,2,3,4,"rehan") # tuple
 - s.discard(5) # No error if not found
 - s.union(s2) # Combines sets (all unique elements)
 - intersection() # print Common elements from two sets
-
+* Superset , Subset , Disjoint :-
+- issuperset() :-
+-Checks if a set contains all elements of another set.
+- issubset():-
+- Checks if all elements of one set are present in another.
+- isdisjoint() :-
+- Checks if two sets have no elements in common.
