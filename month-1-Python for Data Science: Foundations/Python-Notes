@@ -141,3 +141,20 @@ ex----> tup1 = (1,2,3,4,"rehan") # tuple
 - Checks if all elements of one set are present in another.
 - isdisjoint() :-
 - Checks if two sets have no elements in common.
+
+# range() :-
+- range() is used to generate a sequence of numbers.
+- example ---> list(range(0,10)) 
+- [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+- start → (Optional) Starting number (default is 0)
+- stop → (Required) The number at which the range stops (not included)
+- step → (Optional) The increment (default is 1)
+* Common Use Cases:-
+- For loops
+- Generating sequences
+- Iterating indexes in lists
+
+
+
+
+
