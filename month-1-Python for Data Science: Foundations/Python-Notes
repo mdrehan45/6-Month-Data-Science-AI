@@ -154,6 +154,51 @@ ex----> tup1 = (1,2,3,4,"rehan") # tuple
 - Generating sequences
 - Iterating indexes in lists
 
+^^^^^
+# Operators in pyhton :-
+- Operators :-
+- Symbols that perform operations on variables and values.
+- ex:- +, -, *, /, ==, and, etc.
+- Operands :-
+- The values or variables on which the operator works.
+
+* Types of operators :-
+1) Arithmetic Operators :-
+- Used for mathematical calculations.
+-  +  ---> Addition  ---> 'a + b'
+-  -  ---> Subtraction ---> 'a - b'
+-  *  ---> Multiplication ---> 'a * b'
+-  /   ---> Division ---> 'a / b'
+-  // ---> Floor Division ---> 'a // b'
+-  % ---> Modulus ---> 'a % b' (remainder)
+-  ** ---> Exponentiation ---> 'a ** b' (power) 
+2) Comparison operators :-
+- Used to compare values.
+- == ---> Equal to ---> 'a == b'
+- !=  ---> Not equal to ---> 'a != b'
+-  > ---> Greater than ---> 'a > b'
+-  < ---> Less than ---> 'a < b'
+-  >= ---> Greater or equal ---> 'a >= b'
+-  <= ---> Less or equal ---> 'a <= b'
+3) Assignment Operators :-
+- Assignment operators are used to assign values to variables.
+- The basic operator is ' = '.
+- but Python offers several shortcut operators that combine assignment with other operations like addition, subtraction, multiplication, etc.
+- ex ---> x = 10 # Assigns the value 10 to variable x.
+- '+=' ---> 'x += 5' ---> 'x = x + 5' ---> Adds and assigns.
+- '-=' ---> 'x -= 3' ---> 'x = x - 3' ---> Subtracts and assigns.
+- '*=' ---> 'x *= 2' ---> 'x = x * 2' ---> Multiplies and assigns.
+- '/=' ---> 'x /= 4' ---> 'x = x / 4' ---> Divides and assigns.
+
+
+
+
+
+
+
+
+
+
 
 
 
