@@ -172,7 +172,7 @@ ex----> tup1 = (1,2,3,4,"rehan") # tuple
 -  // ---> Floor Division ---> 'a // b'
 -  % ---> Modulus ---> 'a % b' (remainder)
 -  ** ---> Exponentiation ---> 'a ** b' (power) 
-2) Comparison operators :-
+2) Comparison(Relational) operators :-
 - Used to compare values.
 - == ---> Equal to ---> 'a == b'
 - !=  ---> Not equal to ---> 'a != b'
@@ -189,9 +189,35 @@ ex----> tup1 = (1,2,3,4,"rehan") # tuple
 - '-=' ---> 'x -= 3' ---> 'x = x - 3' ---> Subtracts and assigns.
 - '*=' ---> 'x *= 2' ---> 'x = x * 2' ---> Multiplies and assigns.
 - '/=' ---> 'x /= 4' ---> 'x = x / 4' ---> Divides and assigns.
+4) Logical Operators :-
+- Logical operators are used to combine multiple Boolean conditions and return either True or False.
+- and -----> Returns True only if both conditions are True.
+- or ---->  Returns True if at least one condition is True.
+- not ---> Reverses the result — True becomes False.
+5) Unary Operator :-
+- Unary operators are operators that operate on only one operand.
+- ' - ' ----> Unary Minus	----> Negates the value (makes it negative).
 
+# Number System Conversion :-
 
+- Number systems are ways to represent numbers in different bases:
+- Decimal – Base 10 (0–9), our regular number system.
+- Binary – Base 2 (0, 1), used in computers.
+- Octal – Base 8 (0–7), used in low-level computing.
+- Hexadecimal – Base 16 (0–9, A–F), compact form for binary.
 
+* Python provides built-in functions to convert between these systems:
+- bin() – Converts a decimal to binary.
+- oct() – Converts a decimal to octal.
+- hex() – Converts a decimal to hexadecimal.
+
+# Swap Variables in python :-
+- In Python, swapping values between two variables is very easy and doesn’t need a third variable.
+- ex :- a, b = b, a
+
+# Introduce id() :-
+- The id() function returns the unique memory address (identity) of an object in Python.
+- ex :- id(object) 
 
 
 
