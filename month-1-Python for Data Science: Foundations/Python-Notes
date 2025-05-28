@@ -219,13 +219,35 @@ ex----> tup1 = (1,2,3,4,"rehan") # tuple
 - The id() function returns the unique memory address (identity) of an object in Python.
 - ex :- id(object) 
 
+^^^^
+# String :-
+- A string is a sequence of characters enclosed in quotes — single ('), double ("), or triple (''' or """).
+- ex :- name = 'Rehan'
+greet = "Hello!"
+paragraph = """This is a
+multi-line string."""
+- strings are immutable.
 
-
-
-
-
-
-
-
-
-
+* methods :-
+- upper() --->  Converts to UPPERCASE
+- lower() ---> Converts to lowercase
+- title() ---> Capitalizes first letter of each word
+- strip() ---> Removes leading/trailing spaces
+- replace() ---> Replaces part of the string
+- split() ---> Splits into a list
+- join() ---> Joins list elements into string
+- find() ---> Finds index of a substring 
+- rfind() ---> Finds last index of substring
+- count() ---> Counts occurrences 
+- startswith() ---> Checks if starts with substring 
+- endswith() ---> Checks if ends with substring 
+- isalpha() ---> True if all characters are letters
+- isdigit() ---> True if all characters are digits
+* Escape :-
+- \n ---> New line
+- \t  ---> Tab 
+- \\ ---> Backslash
+- \' ---> Single quote
+- \" ---> Double quote 
+* Raw Strings :-
+- Ignore escape characters by prefixing r:
