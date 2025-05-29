@@ -251,3 +251,27 @@ multi-line string."""
 - \" ---> Double quote 
 * Raw Strings :-
 - Ignore escape characters by prefixing r:
+
+# Bitwise Operator :-
+- Bitwise operators operate on integers at the binary (bit) level.
+- They compare or manipulate individual bits (0s and 1s) of numbers.
+- &	---> AND ---> 1 if both bits are 1.
+- | ---> or ---> 1 if at least one bit is 1	.
+- ~ ---> complement ---> first thing we need to understand what is mean by complement.
+complement means it will do reverse of the binary format i.e. - ~0 it will give you 1 ~1 it will give 0.
+12 binary format is 00001100 ( complement of ~00001100 reverse the number - 11110011 which is (-13).
+- ^ ---> XOR ---> 1 if bits are different	.
+- << ---> left shift ---> Shifts bits left (adds 0s at right)	
+- >> ---> right shift ---> Shifts bits right (drops bits at right)	
+
+# import math module :-
+- The math module provides access to mathematical functions and constants like sqrt(), pi, log(), etc.
+- ex :- import math
+- math.sqrt(16)       # 4.0
+- math.pi             # 3.14159...
+- math.factorial(5)   # 120
+
+
+
+
+
