@@ -263,7 +263,7 @@ complement means it will do reverse of the binary format i.e. - ~0 it will give 
 - ^ ---> XOR ---> 1 if bits are different	.
 - << ---> left shift ---> Shifts bits left (adds 0s at right)	
 - >> ---> right shift ---> Shifts bits right (drops bits at right)	
-
+ 
 # import math module :-
 - The math module provides access to mathematical functions and constants like sqrt(), pi, log(), etc.
 - ex :- import math
@@ -271,7 +271,21 @@ complement means it will do reverse of the binary format i.e. - ~0 it will give 
 - math.pi             # 3.14159...
 - math.factorial(5)   # 120
 
+^^^^^^
+# Introduction To Numpy :-
 
+- NumPy (Numerical Python) is a powerful Python library used for numerical and scientific computing. 
+- It helps handle large datasets and provides support for arrays, matrices, and many mathematical functions.
+- Used for data analysis and manipulation.
+- Backbone of libraries like Pandas, Scikit-learn, TensorFlow.
 
+* first we need to import :-
+- ex :- import numpy as np
+- after importing we can use numpy functions.
+- like :-
+- np.arange() --> Used to create an array with regularly spaced values.
+- np.ones() ---> Creates an array filled with 1s.
+- np.zeros() ---> Creates an array filled with 0s.
+- reshape() ---> Changes the shape of an array without changing its data.
 
 
