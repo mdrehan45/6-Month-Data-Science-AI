@@ -287,5 +287,18 @@ complement means it will do reverse of the binary format i.e. - ~0 it will give 
 - np.ones() ---> Creates an array filled with 1s.
 - np.zeros() ---> Creates an array filled with 0s.
 - reshape() ---> Changes the shape of an array without changing its data.
+- np.full() ---> Create an array with a specific value.
+- flatten() ---> Converts a 2D array into 1D.
+
+- indexing -->  arr[0, 1]   # Element at row 0, column 1.
+
+- Slicing ---> arr[:, 0]   # All rows, column 0
+               arr[1:, 1:] # From row 1, col 1 onward
+
+- Boolean Masking :-
+arr = np.array([10, 20, 30, 40])
+arr[arr > 25]   # [30 40]
+
+
 
 
