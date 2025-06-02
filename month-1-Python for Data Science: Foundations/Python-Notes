@@ -279,6 +279,13 @@ complement means it will do reverse of the binary format i.e. - ~0 it will give 
 - Used for data analysis and manipulation.
 - Backbone of libraries like Pandas, Scikit-learn, TensorFlow.
 
+* Why use NumPy? :-
+- Python lists are excellent, general-purpose containers. 
+- They can be “heterogeneous”, meaning that they can contain elements of a variety of types, and they are quite fast when used to perform individual operations on a handful of elements.
+- Depending on the characteristics of the data and the types of operations that need to be performed,
+- other containers may be more appropriate; by exploiting these characteristics, we can improve speed, reduce memory consumption, and offer a high-level syntax for performing a variety of common processing tasks.
+- NumPy shines when there are large quantities of “homogeneous” (same-type) data to be processed on the CPU.
+
 * first we need to import :-
 - ex :- import numpy as np
 - after importing we can use numpy functions.
@@ -374,6 +381,13 @@ np.min(arr)  # Output: 1
 np.max(arr)  # Output: 4
 ---> sum() :-
 np.sum(arr)  # Output: 10  
+
+* How to reverse an array :-
+- NumPy’s np.flip() function allows you to flip, or reverse, the contents of an array along an axis.
+- When using np.flip(), specify the array you would like to reverse and the axis. If you don’t specify the axis, NumPy will reverse the contents along all of the axes of your input array.
+ arr = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+ reversed_arr = np.flip(arr)
+ print('Reversed Array: ', reversed_arr) # Reversed Array:  [8 7 6 5 4 3 2 1]
 
 
 
