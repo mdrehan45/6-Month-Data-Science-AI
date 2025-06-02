@@ -299,6 +299,98 @@ complement means it will do reverse of the binary format i.e. - ~0 it will give 
 arr = np.array([10, 20, 30, 40])
 arr[arr > 25]   # [30 40]
 
+* Basic Arithmetic Operations in NumPy :-
+- NumPy allows us to perform element-wise operations easily on arrays. 
+- It’s like doing math with lists, but way faster and cleaner.
+ex :-
+result = arr1 + arr2
+result = arr1 - arr2
+result = arr1 * arr2
+result = arr1 / arr2
+
+* Random in numpy :-
+- NumPy provides a powerful way to generate random numbers using np.random. 
+- It’s very useful in data science, especially for testing, simulation, and ML.
+- np.random.rand() :- Returns random values in a given shape from 0 to 1 (float).
+ex :- np.random.rand(2, 3)
+# Example Output:
+# [[0.12 0.56 0.90]
+#  [0.22 0.45 0.76]]
+- np.random.randint() :-
+- Returns random integers from a given range.
+ex:-
+np.random.randint(1, 10)
+# Output: random integers between 1 and 9
+- np.random.choice() :-
+- Picks random values from a list or array.
+ex :- 
+arr = [10, 20, 30, 40]
+np.random.choice(arr, 2)
+# Output: randomly picks 2 values from arr
+
+* axis in NumPy:-
+- 0	---> Operate column-wise (top to bottom).
+- 1 ---> Operate row-wise (left to right).
+ex:-
+arr = np.array([[1, 2], [3, 4]])
+# Sum along axis=0 (columns)
+np.sum(arr, axis=0)  # Output: [4 6]
+# Sum along axis=1 (rows)
+np.sum(arr, axis=1)  # Output: [3 7]
+
+* np.sort() :-
+- Sorts the array but returns a new sorted array (doesn’t change original).
+- Works row-wise or column-wise using axis.
+ex :-
+arr = np.array([[3, 1, 2], [6, 4, 5]])
+# Sort each row
+np.sort(arr, axis=1)
+# Output: [[1 2 3]
+#          [4 5 6]]
+# Sort each column
+np.sort(arr, axis=0)
+# Output: [[3 1 2]
+#          [6 4 5]] → [[3 1 2]
+#                      [6 4 5]]
+
+* np.delete() :-
+- Deletes rows or columns from an array.
+- Format: np.delete(array, index, axis)
+
+* Statistical Operations in NumPy :-
+- NumPy makes it easy to perform basic statistical calculations on arrays.
+--->  mean() → Average value :-
+arr = np.array([10, 20, 30, 40])
+np.mean(arr)   # Output: 25.0
+---> median() → Middle value:-
+arr = np.array([10, 30, 20])
+np.median(arr)   # Output: 20.0
+---> std() → Standard deviation :-
+- Measures the spread of data from the mean.
+arr = np.array([1, 2, 3, 4])
+np.std(arr)   # Output: 1.118...
+---> min() and max() :-
+np.min(arr)  # Output: 1  
+np.max(arr)  # Output: 4
+---> sum() :-
+np.sum(arr)  # Output: 10  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
