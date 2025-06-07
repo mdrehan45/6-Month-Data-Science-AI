@@ -405,28 +405,22 @@ np.sum(arr)  # Output: 10
 - Helps detect patterns, trends, and outliers in datasets.
 - Can be integrated with NumPy, Pandas, and Jupyter Notebooks.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+* Installation :-
+pip install matplotlib.
+* Importing Matplotlib :-
+import matplotlib.pyplot as plt
+- Matplotlib is a powerful data visualization library in Python. It is widely used in data science for creating:
+Line plots,
+Bar charts,
+Scatter plots,
+Histograms,
+Pie charts,
+Heatmaps.
+- It helps visualize data to identify patterns, trends, and outliers — which is essential in Exploratory Data Analysis (EDA).
+ex :-
+plt.plot(x, y, color='red', linestyle='--', marker='o', label='Line A')
+plt.legend()
+- Always use plt.show() to display plots.
 
 
 
