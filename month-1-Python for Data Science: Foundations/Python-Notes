@@ -422,5 +422,20 @@ plt.plot(x, y, color='red', linestyle='--', marker='o', label='Line A')
 plt.legend()
 - Always use plt.show() to display plots.
 
+^^^^^
+# Introduction of Pandas :-
+- Pandas is a Python open-source library that provides fast, flexible, and expressive data structures (like Series and DataFrames). 
+- designed to make working with structured data easy and intuitive for data analysis, data manipulation, and preprocessing in Data Science and Artificial Intelligence workflows.
+- In Data Science and AI, before you build any model, the most important step is data preparation — and that's where Pandas is used.
+- Stage in Data Science	& How Pandas Helps :-
+-  Data Collection  ---> Load data from CSV, Excel, SQL, JSON
+-  Data Cleaning    ---> Remove missing values, duplicates, fix types
+-  Data Manipulation ---> Filter, sort, group, merge, reshape data
+-  Exploratory Data Analysis (EDA) ---> Summarize data, find patterns 
+-  Feature Engineering  ---> Create new columns/features for ML 
+-  Data Preparation   ---> Make the data ready for modeling (NumPy/Scikit-learn)
+
+
+
 
 
