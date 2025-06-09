@@ -434,6 +434,27 @@ plt.legend()
 -  Exploratory Data Analysis (EDA) ---> Summarize data, find patterns 
 -  Feature Engineering  ---> Create new columns/features for ML 
 -  Data Preparation   ---> Make the data ready for modeling (NumPy/Scikit-learn)
+* Common Pandas Operations :-
+- Load CSV ---> 'pd.read_csv("data.csv")'
+- Show first rows ---> 'df.head()'
+- Filter rows ---> 'df[df['Score'] > 80]'
+- Fill missing values ---> 'df.fillna(0)'
+- Pandas is the foundation of data analysis in Python.
+- It allows you to clean, explore, manipulate, and prepare data — which is the most critical step in Data Science and AI projects.
+
+# Seaborn :-
+- Seaborn is a Python data visualization library built on top of Matplotlib, designed for making attractive and informative statistical graphics easily.
+* Importing :-
+import seaborn as sns
+import matplotlib.pyplot as plt
+- ex :-
+sns.barplot(x="day", y="total_bill", data=df)
+plt.title("Average Bill per Day")
+plt.show()
+- Seaborn makes it easy to create beautiful, meaningful statistical graphics in Python with very little code.
+- It's a go-to tool for visualizing relationships, patterns, and distributions in Data Science and Machine Learning.
+
+
 
 
 
