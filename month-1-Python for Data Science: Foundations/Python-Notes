@@ -454,6 +454,35 @@ plt.show()
 - Seaborn makes it easy to create beautiful, meaningful statistical graphics in Python with very little code.
 - It's a go-to tool for visualizing relationships, patterns, and distributions in Data Science and Machine Learning.
 
+^^^^^
+# EDA (Exploratory Data Analysis) :-
+- Exploring, summarizing, and visualizing data to gain insights, detect patterns, and identify anomalies before building any model.
+
+# Goals of EDA :-
+- Understand the shape, size, and structure of your data.
+- Detect missing values, outliers, and errors.
+- Explore relationships between variables (correlation, dependency).
+- Guide feature selection and feature engineering.
+- Prepare data for modeling
+
+# EDA Techniques :- ( Future Engineering Technique )
+1) Variable Identification.
+2) Univariate Analysis.
+3) Bivariate Analysis.
+4) Outlier Detection.
+5) Missing Value Treatment.
+6) Variable Transformation.
+7) Variable Creation.
+
+* Dependent Variable = target attribute = predictive variable == y
+* Independent Variable = non target attribute = non predictive variable == x
+
+- To convert Raw Data --> into clean data the process called datacleaning or data cleansing.
+
+
+
+
+
 
 
 
