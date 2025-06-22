@@ -479,6 +479,47 @@ plt.show()
 
 - To convert Raw Data --> into clean data the process called datacleaning or data cleansing.
 
+^^^^^
+# Conditional Statement :-
+- Conditional statements in Python are used to perform different actions based on different conditions.
+In simple words, it allows your program to "decide" what to do — if a condition is true, run one block of code; if false, run another.
+
+* if statement :-
+- An if statement checks a condition. If the condition is True, the block of code under if is executed.
+- ex :- x = 10
+        if x > 5:
+              print("x is greater than 5")
+
+* elif statement :-
+- elif means "else if". It checks another condition if the previous if condition was False.
+- You can use multiple elif to check many conditions.
+ x = 7
+if x > 10:
+    print("x is greater than 10")
+elif x > 5:
+    print("x is between 6 and 10")
+
+* else statement :-
+- The else block runs if all previous if and elif conditions are False.
+It is the "default" action.
+ x = 3
+if x > 5:
+    print("x is greater than 5")
+else:
+    print("x is 5 or smaller")
+
+* Nested if :-
+- When an if statement is inside another if statement — it is called a nested if.
+It allows checking more detailed conditions.
+x = 15
+if x > 10:
+    print("x is greater than 10")
+    if x > 20:
+        print("x is also greater than 20")
+    else:
+        print("x is between 11 and 20")
+
+
 
 
 
