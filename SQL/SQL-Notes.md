@@ -23,4 +23,16 @@ A record, also called a row of data, is each individual entry that exists in a t
 * select * from databasename;
 * select weather,temperature from database;
   - This will only select the weather and temperature columns from the dataset.
+* CREATE DATABASE databasename;
+  - Creates a new database with the given name.
+*  CREATE TABLE tablename (
+    column1 datatype,
+    column2 datatype );
+  - Creates a new table with specified columns and data types.
+* INSERT INTO tablename (column1, column2) VALUES (value1, value2);
+  - Inserts a new row of data into a table.
+* WHERE Clause :-
+  - SELECT columns FROM tablename WHERE condition;
+  - Filters records to return only those that meet the specified condition.
+
   
