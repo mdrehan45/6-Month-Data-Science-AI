@@ -1,0 +1,605 @@
+SQL practice :-
+
+Day 01 -
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mysql> create database db;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use db;
+Database changed
+mysql> create table students;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> create table students(id int not null primary key,
+    -> name varchar(30),
+    -> city varchar(10),
+    -> marks int);
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> desc students;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | NO   | PRI | NULL    |       |
+| name  | varchar(30) | YES  |     | NULL    |       |
+| city  | varchar(10) | YES  |     | NULL    |       |
+| marks | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+
+mysql> insert into table students (id,name,city,marks) values (1,'sam','hyd',80);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table students (id,name,city,marks) values (1,'sam','hyd',80)' at line 1
+mysql> insert into table students (id,name,city,marks) values (1,sam,hyd,80);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table students (id,name,city,marks) values (1,sam,hyd,80)' at line 1
+mysql> -- error coz you not need to type table in insert com
+mysql> insert into students (id,name,city,marks) values (1,sam,hyd,80);d,80); -- now this is correct syntax
+ERROR 1054 (42S22): Unknown column 'sam' in 'field list'
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'd,80)' at line 1
+mysql> -- error cuz i dont't use '';
+mysql> insert into students (id,name,city,marks) values (1,'sam','hyd',80); -- now this is correct syntax
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from students;
++----+------+------+-------+
+| id | name | city | marks |
++----+------+------+-------+
+|  1 | sam  | hyd  |    80 |
++----+------+------+-------+
+1 row in set (0.00 sec)
+
+mysql> -- successfully added one record;
+mysql> -- now inserting multiple records;
+mysql> insert into students values(2,'jack','mum',77),(3,'max','ban',89),(4,'tom','kol',67),(5,'abd','pune',99),(6,'brevis','delhi',50);
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from students;
++----+--------+-------+-------+
+| id | name   | city  | marks |
++----+--------+-------+-------+
+|  1 | sam    | hyd   |    80 |
+|  2 | jack   | mum   |    77 |
+|  3 | max    | ban   |    89 |
+|  4 | tom    | kol   |    67 |
+|  5 | abd    | pune  |    99 |
+|  6 | brevis | delhi |    50 |
++----+--------+-------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select name,city from students;
++--------+-------+
+| name   | city  |
++--------+-------+
+| sam    | hyd   |
+| jack   | mum   |
+| max    | ban   |
+| tom    | kol   |
+| abd    | pune  |
+| brevis | delhi |
++--------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select distinct id from students;
++----+
+| id |
++----+
+|  1 |
+|  2 |
+|  3 |
+|  4 |
+|  5 |
+|  6 |
++----+
+6 rows in set (0.01 sec)
+
+mysql> -- where clause;
+mysql> select * from students where id = 3;
++----+------+------+-------+
+| id | name | city | marks |
++----+------+------+-------+
+|  3 | max  | ban  |    89 |
++----+------+------+-------+
+1 row in set (0.00 sec)
+
+mysql> -- sql arithmetic operators;
+mysql> 30 + 40;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '30 + 40' at line 1
+mysql> select 30 + 40;
++---------+
+| 30 + 40 |
++---------+
+|      70 |
++---------+
+1 row in set (0.00 sec)
+
+mysql> select 30-20;
++-------+
+| 30-20 |
++-------+
+|    10 |
++-------+
+1 row in set (0.01 sec)
+
+mysql> select 2*5;
++-----+
+| 2*5 |
++-----+
+|  10 |
++-----+
+1 row in set (0.00 sec)
+
+mysql> select 10/5;
++--------+
+| 10/5   |
++--------+
+| 2.0000 |
++--------+
+1 row in set (0.00 sec)
+
+mysql> select 20%5;
++------+
+| 20%5 |
++------+
+|    0 |
++------+
+1 row in set (0.00 sec)
+
+mysql> -- SQL Comparison Operators:
+mysql> create table customers ( id int not null primary key,
+    -> name varchar(20),
+    -> address varchar(10),
+    -> salary int );
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> select * from customers;
+Empty set (0.00 sec)
+
+mysql> desc customers;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id      | int         | NO   | PRI | NULL    |       |
+| name    | varchar(20) | YES  |     | NULL    |       |
+| address | varchar(10) | YES  |     | NULL    |       |
+| salary  | int         | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> insert into customers values(1,'smith','hyd',50000),(2,'jon','kol',30000),(3,'devid','mum',40000),(4,'vicky','pune',45000),(5,'brevis','ban',90000);
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from customers;
++----+--------+---------+--------+
+| id | name   | address | salary |
++----+--------+---------+--------+
+|  1 | smith  | hyd     |  50000 |
+|  2 | jon    | kol     |  30000 |
+|  3 | devid  | mum     |  40000 |
+|  4 | vicky  | pune    |  45000 |
+|  5 | brevis | ban     |  90000 |
++----+--------+---------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select * from customers where salary >40000;
++----+--------+---------+--------+
+| id | name   | address | salary |
++----+--------+---------+--------+
+|  1 | smith  | hyd     |  50000 |
+|  4 | vicky  | pune    |  45000 |
+|  5 | brevis | ban     |  90000 |
++----+--------+---------+--------+
+3 rows in set (0.00 sec)
+
+mysql> select * from customers where salary = 30000;
++----+------+---------+--------+
+| id | name | address | salary |
++----+------+---------+--------+
+|  2 | jon  | kol     |  30000 |
++----+------+---------+--------+
+1 row in set (0.00 sec)
+
+mysql> select * from customers where salary != 30000;
++----+--------+---------+--------+
+| id | name   | address | salary |
++----+--------+---------+--------+
+|  1 | smith  | hyd     |  50000 |
+|  3 | devid  | mum     |  40000 |
+|  4 | vicky  | pune    |  45000 |
+|  5 | brevis | ban     |  90000 |
++----+--------+---------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select * from customers where salary <> 30000;
++----+--------+---------+--------+
+| id | name   | address | salary |
++----+--------+---------+--------+
+|  1 | smith  | hyd     |  50000 |
+|  3 | devid  | mum     |  40000 |
+|  4 | vicky  | pune    |  45000 |
+|  5 | brevis | ban     |  90000 |
++----+--------+---------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select * from customers where salary >= 40000;
++----+--------+---------+--------+
+| id | name   | address | salary |
++----+--------+---------+--------+
+|  1 | smith  | hyd     |  50000 |
+|  3 | devid  | mum     |  40000 |
+|  4 | vicky  | pune    |  45000 |
+|  5 | brevis | ban     |  90000 |
++----+--------+---------+--------+
+4 rows in set (0.00 sec)
+
+mysql> -- SQL Logical Operators:
+mysql> select * from customers;
++----+--------+---------+--------+
+| id | name   | address | salary |
++----+--------+---------+--------+
+|  1 | smith  | hyd     |  50000 |
+|  2 | jon    | kol     |  30000 |
+|  3 | devid  | mum     |  40000 |
+|  4 | vicky  | pune    |  45000 |
+|  5 | brevis | ban     |  90000 |
++----+--------+---------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select * from customers where id>=4 AND salary>=30000;
++----+--------+---------+--------+
+| id | name   | address | salary |
++----+--------+---------+--------+
+|  4 | vicky  | pune    |  45000 |
+|  5 | brevis | ban     |  90000 |
++----+--------+---------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select * from customers where id>=4 OR salary>=30000;
++----+--------+---------+--------+
+| id | name   | address | salary |
++----+--------+---------+--------+
+|  1 | smith  | hyd     |  50000 |
+|  2 | jon    | kol     |  30000 |
+|  3 | devid  | mum     |  40000 |
+|  4 | vicky  | pune    |  45000 |
+|  5 | brevis | ban     |  90000 |
++----+--------+---------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select * from customers where name IS NOT NULL;
++----+--------+---------+--------+
+| id | name   | address | salary |
++----+--------+---------+--------+
+|  1 | smith  | hyd     |  50000 |
+|  2 | jon    | kol     |  30000 |
+|  3 | devid  | mum     |  40000 |
+|  4 | vicky  | pune    |  45000 |
+|  5 | brevis | ban     |  90000 |
++----+--------+---------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select * from customers where name LIKE 'dev%';
++----+-------+---------+--------+
+| id | name  | address | salary |
++----+-------+---------+--------+
+|  3 | devid | mum     |  40000 |
++----+-------+---------+--------+
+1 row in set (0.00 sec)
+
+mysql> select * from customers where salary IN (40000,45000);
++----+-------+---------+--------+
+| id | name  | address | salary |
++----+-------+---------+--------+
+|  3 | devid | mum     |  40000 |
+|  4 | vicky | pune    |  45000 |
++----+-------+---------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select * from customers where salary BETWEEN (40000,90000);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> SELECT * FROM customers WHERE salary BETWEEN 40000 AND 90000;
++----+--------+---------+--------+
+| id | name   | address | salary |
++----+--------+---------+--------+
+|  1 | smith  | hyd     |  50000 |
+|  3 | devid  | mum     |  40000 |
+|  4 | vicky  | pune    |  45000 |
+|  5 | brevis | ban     |  90000 |
++----+--------+---------+--------+
+4 rows in set (0.01 sec)
+
+mysql> select id from customers where exist ( select id from customer where salary>65000);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select id from customer where salary>65000)' at line 1
+mysql> select id from customers where exists ( select id from customer where salary>65000);
+ERROR 1146 (42S02): Table 'db.customer' doesn't exist
+mysql> select id from customers where exists ( select id from customers where salary>65000);
++----+
+| id |
++----+
+|  1 |
+|  2 |
+|  3 |
+|  4 |
+|  5 |
++----+
+5 rows in set (0.01 sec)
+
+mysql> select id from customers where exists ( select id from customers where salary>10000000);
+Empty set (0.00 sec)
+
+mysql>
+
+Day 02 :-
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| db                 |
+| information_schema |
+| mysql              |
+| nit                |
+| performance_schema |
+| sys                |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> use db;
+Database changed
+mysql> show tables;
++--------------+
+| Tables_in_db |
++--------------+
+| customers    |
+| students     |
++--------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from customers;
++----+--------+---------+--------+
+| id | name   | address | salary |
++----+--------+---------+--------+
+|  1 | smith  | hyd     |  50000 |
+|  2 | jon    | kol     |  30000 |
+|  3 | devid  | mum     |  40000 |
+|  4 | vicky  | pune    |  45000 |
+|  5 | brevis | ban     |  90000 |
++----+--------+---------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select * from students;
++----+--------+-------+-------+
+| id | name   | city  | marks |
++----+--------+-------+-------+
+|  1 | sam    | hyd   |    80 |
+|  2 | jack   | mum   |    77 |
+|  3 | max    | ban   |    89 |
+|  4 | tom    | kol   |    67 |
+|  5 | abd    | pune  |    99 |
+|  6 | brevis | delhi |    50 |
++----+--------+-------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select * from customers where city is not null;
+ERROR 1054 (42S22): Unknown column 'city' in 'where clause'
+mysql> select * from customers where address is not null;
++----+--------+---------+--------+
+| id | name   | address | salary |
++----+--------+---------+--------+
+|  1 | smith  | hyd     |  50000 |
+|  2 | jon    | kol     |  30000 |
+|  3 | devid  | mum     |  40000 |
+|  4 | vicky  | pune    |  45000 |
+|  5 | brevis | ban     |  90000 |
++----+--------+---------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select * from customers where address is null;
+Empty set (0.00 sec)
+
+mysql> select * from customers where id in(3,5);
++----+--------+---------+--------+
+| id | name   | address | salary |
++----+--------+---------+--------+
+|  3 | devid  | mum     |  40000 |
+|  5 | brevis | ban     |  90000 |
++----+--------+---------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select * from customers where salary between 30000 and 45000;
++----+-------+---------+--------+
+| id | name  | address | salary |
++----+-------+---------+--------+
+|  2 | jon   | kol     |  30000 |
+|  3 | devid | mum     |  40000 |
+|  4 | vicky | pune    |  45000 |
++----+-------+---------+--------+
+3 rows in set (0.00 sec)
+
+mysql> select * from customers where id >=2 and salary salary <= 42000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'salary <= 42000' at line 1
+mysql> select * from customers where  id >=2 and  salary <= 42000;
++----+-------+---------+--------+
+| id | name  | address | salary |
++----+-------+---------+--------+
+|  2 | jon   | kol     |  30000 |
+|  3 | devid | mum     |  40000 |
++----+-------+---------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select * from customers where  id >=2 and  or <= 42000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'or <= 42000' at line 1
+mysql> select * from customers where  id >=2 and  or salary<= 42000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'or salary<= 42000' at line 1
+mysql> select * from customers where  id >=2 or salary<= 42000;
++----+--------+---------+--------+
+| id | name   | address | salary |
++----+--------+---------+--------+
+|  2 | jon    | kol     |  30000 |
+|  3 | devid  | mum     |  40000 |
+|  4 | vicky  | pune    |  45000 |
+|  5 | brevis | ban     |  90000 |
++----+--------+---------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select * from customers where not id=2;
++----+--------+---------+--------+
+| id | name   | address | salary |
++----+--------+---------+--------+
+|  1 | smith  | hyd     |  50000 |
+|  3 | devid  | mum     |  40000 |
+|  4 | vicky  | pune    |  45000 |
+|  5 | brevis | ban     |  90000 |
++----+--------+---------+--------+
+4 rows in set (0.00 sec)
+
+mysql> alter table customers add phoneno int;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from customers;
++----+--------+---------+--------+---------+
+| id | name   | address | salary | phoneno |
++----+--------+---------+--------+---------+
+|  1 | smith  | hyd     |  50000 |    NULL |
+|  2 | jon    | kol     |  30000 |    NULL |
+|  3 | devid  | mum     |  40000 |    NULL |
+|  4 | vicky  | pune    |  45000 |    NULL |
+|  5 | brevis | ban     |  90000 |    NULL |
++----+--------+---------+--------+---------+
+5 rows in set (0.00 sec)
+
+mysql> alter table customers rename phoneno to mobno;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'to mobno' at line 1
+mysql> alter table customers rename column phoneno to mobno;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from customers;
++----+--------+---------+--------+-------+
+| id | name   | address | salary | mobno |
++----+--------+---------+--------+-------+
+|  1 | smith  | hyd     |  50000 |  NULL |
+|  2 | jon    | kol     |  30000 |  NULL |
+|  3 | devid  | mum     |  40000 |  NULL |
+|  4 | vicky  | pune    |  45000 |  NULL |
+|  5 | brevis | ban     |  90000 |  NULL |
++----+--------+---------+--------+-------+
+5 rows in set (0.00 sec)
+
+mysql> alter table customers modify mobno float;
+Query OK, 5 rows affected (0.10 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> desc customers;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id      | int         | NO   | PRI | NULL    |       |
+| name    | varchar(20) | YES  |     | NULL    |       |
+| address | varchar(10) | YES  |     | NULL    |       |
+| salary  | int         | YES  |     | NULL    |       |
+| mobno   | float       | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> alter table customers drop column mobno;
+Query OK, 0 rows affected (0.07 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from customers;
++----+--------+---------+--------+
+| id | name   | address | salary |
++----+--------+---------+--------+
+|  1 | smith  | hyd     |  50000 |
+|  2 | jon    | kol     |  30000 |
+|  3 | devid  | mum     |  40000 |
+|  4 | vicky  | pune    |  45000 |
+|  5 | brevis | ban     |  90000 |
++----+--------+---------+--------+
+5 rows in set (0.00 sec)
+
+mysql> update customers set salary = 42000 where  id = 3;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from customers;
++----+--------+---------+--------+
+| id | name   | address | salary |
++----+--------+---------+--------+
+|  1 | smith  | hyd     |  50000 |
+|  2 | jon    | kol     |  30000 |
+|  3 | devid  | mum     |  42000 |
+|  4 | vicky  | pune    |  45000 |
+|  5 | brevis | ban     |  90000 |
++----+--------+---------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select count(*) from customers;
++----------+
+| count(*) |
++----------+
+|        5 |
++----------+
+1 row in set (0.01 sec)
+
+mysql> select count(*) from customers where name = jon;
+ERROR 1054 (42S22): Unknown column 'jon' in 'where clause'
+mysql> select count(*) from customers where name = 'jon';
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.01 sec)
+
+mysql> select max(salary) from customers;
++-------------+
+| max(salary) |
++-------------+
+|       90000 |
++-------------+
+1 row in set (0.01 sec)
+
+mysql> select min(salary) from customers;
++-------------+
+| min(salary) |
++-------------+
+|       30000 |
++-------------+
+1 row in set (0.04 sec)
+
+mysql> select max(salary) , min(id) from customers;
++-------------+---------+
+| max(salary) | min(id) |
++-------------+---------+
+|       90000 |       1 |
++-------------+---------+
+1 row in set (0.00 sec)
+
+mysql> select avg(salary) from customers;
++-------------+
+| avg(salary) |
++-------------+
+|  51400.0000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select sum(salary) from customers;
++-------------+
+| sum(salary) |
++-------------+
+|      257000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> slect sqrt(25);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'slect sqrt(25)' at line 1
+mysql> select sqrt(25);
++----------+
+| sqrt(25) |
++----------+
+|        5 |
++----------+
+1 row in set (0.00 sec)
+
+mysql>
