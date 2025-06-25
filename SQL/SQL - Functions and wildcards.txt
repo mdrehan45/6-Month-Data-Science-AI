@@ -1,0 +1,403 @@
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| db                 |
+| information_schema |
+| mysql              |
+| nit                |
+| performance_schema |
+| sys                |
++--------------------+
+6 rows in set (0.01 sec)
+
+mysql> use db;
+Database changed
+mysql> show tables;
++--------------+
+| Tables_in_db |
++--------------+
+| customers    |
+| students     |
++--------------+
+2 rows in set (0.01 sec)
+
+mysql> select * from customers;
++----+--------+---------+--------+
+| id | name   | address | salary |
++----+--------+---------+--------+
+|  1 | smith  | hyd     |  50000 |
+|  2 | jon    | kol     |  30000 |
+|  3 | devid  | mum     |  42000 |
+|  4 | vicky  | pune    |  45000 |
+|  5 | brevis | ban     |  90000 |
++----+--------+---------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select * from students;
++----+--------+-------+-------+
+| id | name   | city  | marks |
++----+--------+-------+-------+
+|  1 | sam    | hyd   |    80 |
+|  2 | jack   | mum   |    77 |
+|  3 | max    | ban   |    89 |
+|  4 | tom    | kol   |    67 |
+|  5 | abd    | pune  |    99 |
+|  6 | brevis | delhi |    50 |
++----+--------+-------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select count(*) from students;
++----------+
+| count(*) |
++----------+
+|        6 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select sum(*) from students;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) from students' at line 1
+mysql> select sum(marks) from students;
++------------+
+| sum(marks) |
++------------+
+|        462 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select max(marks) from students;
++------------+
+| max(marks) |
++------------+
+|         99 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select min(marks) from students;
++------------+
+| min(marks) |
++------------+
+|         50 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select avg(marks) from students;
++------------+
+| avg(marks) |
++------------+
+|    77.0000 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select count(name) from students;
++-------------+
+| count(name) |
++-------------+
+|           6 |
++-------------+
+1 row in set (0.04 sec)
+
+mysql> select * from students order by marks;
++----+--------+-------+-------+
+| id | name   | city  | marks |
++----+--------+-------+-------+
+|  6 | brevis | delhi |    50 |
+|  4 | tom    | kol   |    67 |
+|  2 | jack   | mum   |    77 |
+|  1 | sam    | hyd   |    80 |
+|  3 | max    | ban   |    89 |
+|  5 | abd    | pune  |    99 |
++----+--------+-------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select * from students order by marks desc;
++----+--------+-------+-------+
+| id | name   | city  | marks |
++----+--------+-------+-------+
+|  5 | abd    | pune  |    99 |
+|  3 | max    | ban   |    89 |
+|  1 | sam    | hyd   |    80 |
+|  2 | jack   | mum   |    77 |
+|  4 | tom    | kol   |    67 |
+|  6 | brevis | delhi |    50 |
++----+--------+-------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select * from students where name like '%b%';
++----+--------+-------+-------+
+| id | name   | city  | marks |
++----+--------+-------+-------+
+|  5 | abd    | pune  |    99 |
+|  6 | brevis | delhi |    50 |
++----+--------+-------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select * from students where name like 'ab%';
++----+------+------+-------+
+| id | name | city | marks |
++----+------+------+-------+
+|  5 | abd  | pune |    99 |
++----+------+------+-------+
+1 row in set (0.00 sec)
+
+mysql> select * from students where name like 'm%';
++----+------+------+-------+
+| id | name | city | marks |
++----+------+------+-------+
+|  3 | max  | ban  |    89 |
++----+------+------+-------+
+1 row in set (0.00 sec)
+
+mysql> select * from students where name like '%s';
++----+--------+-------+-------+
+| id | name   | city  | marks |
++----+--------+-------+-------+
+|  6 | brevis | delhi |    50 |
++----+--------+-------+-------+
+1 row in set (0.00 sec)
+
+mysql> select * from students where name like '_a%';
++----+------+------+-------+
+| id | name | city | marks |
++----+------+------+-------+
+|  1 | sam  | hyd  |    80 |
+|  2 | jack | mum  |    77 |
+|  3 | max  | ban  |    89 |
++----+------+------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select * from students where name like '__a%';
+Empty set (0.00 sec)
+
+mysql> select * from students where name like '%c_';
++----+------+------+-------+
+| id | name | city | marks |
++----+------+------+-------+
+|  2 | jack | mum  |    77 |
++----+------+------+-------+
+1 row in set (0.00 sec)
+
+mysql> -- joins
+mysql> select * from students;
++----+--------+-------+-------+
+| id | name   | city  | marks |
++----+--------+-------+-------+
+|  1 | sam    | hyd   |    80 |
+|  2 | jack   | mum   |    77 |
+|  3 | max    | ban   |    89 |
+|  4 | tom    | kol   |    67 |
+|  5 | abd    | pune  |    99 |
+|  6 | brevis | delhi |    50 |
++----+--------+-------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select * from customers;
++----+--------+---------+--------+
+| id | name   | address | salary |
++----+--------+---------+--------+
+|  1 | smith  | hyd     |  50000 |
+|  2 | jon    | kol     |  30000 |
+|  3 | devid  | mum     |  42000 |
+|  4 | vicky  | pune    |  45000 |
+|  5 | brevis | ban     |  90000 |
++----+--------+---------+--------+
+5 rows in set (0.00 sec)
+
+mysql> create table employe ( id int not null primary key,
+    -> salary int,
+    -> name varchar(30))
+    -> ;
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> select * from employe;
+Empty set (0.00 sec)
+
+mysql> insert into employe values (12,20000,'aman'),(23,30000,'max'),(24,35000,'smith'),(35,60000,'jack');
+Query OK, 4 rows affected (0.05 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select * from employe;
++----+--------+-------+
+| id | salary | name  |
++----+--------+-------+
+| 12 |  20000 | aman  |
+| 23 |  30000 | max   |
+| 24 |  35000 | smith |
+| 35 |  60000 | jack  |
++----+--------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select * from students;
++----+--------+-------+-------+
+| id | name   | city  | marks |
++----+--------+-------+-------+
+|  1 | sam    | hyd   |    80 |
+|  2 | jack   | mum   |    77 |
+|  3 | max    | ban   |    89 |
+|  4 | tom    | kol   |    67 |
+|  5 | abd    | pune  |    99 |
+|  6 | brevis | delhi |    50 |
++----+--------+-------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select * from customers;
++----+--------+---------+--------+
+| id | name   | address | salary |
++----+--------+---------+--------+
+|  1 | smith  | hyd     |  50000 |
+|  2 | jon    | kol     |  30000 |
+|  3 | devid  | mum     |  42000 |
+|  4 | vicky  | pune    |  45000 |
+|  5 | brevis | ban     |  90000 |
++----+--------+---------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select * from students inner join customers on students.id=customers.id;
++----+------+------+-------+----+--------+---------+--------+
+| id | name | city | marks | id | name   | address | salary |
++----+------+------+-------+----+--------+---------+--------+
+|  1 | sam  | hyd  |    80 |  1 | smith  | hyd     |  50000 |
+|  2 | jack | mum  |    77 |  2 | jon    | kol     |  30000 |
+|  3 | max  | ban  |    89 |  3 | devid  | mum     |  42000 |
+|  4 | tom  | kol  |    67 |  4 | vicky  | pune    |  45000 |
+|  5 | abd  | pune |    99 |  5 | brevis | ban     |  90000 |
++----+------+------+-------+----+--------+---------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select * from customers inner join students on customers.id=students.id;
++----+--------+---------+--------+----+------+------+-------+
+| id | name   | address | salary | id | name | city | marks |
++----+--------+---------+--------+----+------+------+-------+
+|  1 | smith  | hyd     |  50000 |  1 | sam  | hyd  |    80 |
+|  2 | jon    | kol     |  30000 |  2 | jack | mum  |    77 |
+|  3 | devid  | mum     |  42000 |  3 | max  | ban  |    89 |
+|  4 | vicky  | pune    |  45000 |  4 | tom  | kol  |    67 |
+|  5 | brevis | ban     |  90000 |  5 | abd  | pune |    99 |
++----+--------+---------+--------+----+------+------+-------+
+5 rows in set (0.00 sec)
+
+mysql> select * from students left join customers on students.id=customers.id;
++----+--------+-------+-------+------+--------+---------+--------+
+| id | name   | city  | marks | id   | name   | address | salary |
++----+--------+-------+-------+------+--------+---------+--------+
+|  1 | sam    | hyd   |    80 |    1 | smith  | hyd     |  50000 |
+|  2 | jack   | mum   |    77 |    2 | jon    | kol     |  30000 |
+|  3 | max    | ban   |    89 |    3 | devid  | mum     |  42000 |
+|  4 | tom    | kol   |    67 |    4 | vicky  | pune    |  45000 |
+|  5 | abd    | pune  |    99 |    5 | brevis | ban     |  90000 |
+|  6 | brevis | delhi |    50 | NULL | NULL   | NULL    |   NULL |
++----+--------+-------+-------+------+--------+---------+--------+
+6 rows in set (0.00 sec)
+
+mysql> select * from customers left join students on customers.id=students.id;
++----+--------+---------+--------+------+------+------+-------+
+| id | name   | address | salary | id   | name | city | marks |
++----+--------+---------+--------+------+------+------+-------+
+|  1 | smith  | hyd     |  50000 |    1 | sam  | hyd  |    80 |
+|  2 | jon    | kol     |  30000 |    2 | jack | mum  |    77 |
+|  3 | devid  | mum     |  42000 |    3 | max  | ban  |    89 |
+|  4 | vicky  | pune    |  45000 |    4 | tom  | kol  |    67 |
+|  5 | brevis | ban     |  90000 |    5 | abd  | pune |    99 |
++----+--------+---------+--------+------+------+------+-------+
+5 rows in set (0.00 sec)
+
+mysql> select * from students right join customers on students.id=customers.id;
++------+------+------+-------+----+--------+---------+--------+
+| id   | name | city | marks | id | name   | address | salary |
++------+------+------+-------+----+--------+---------+--------+
+|    1 | sam  | hyd  |    80 |  1 | smith  | hyd     |  50000 |
+|    2 | jack | mum  |    77 |  2 | jon    | kol     |  30000 |
+|    3 | max  | ban  |    89 |  3 | devid  | mum     |  42000 |
+|    4 | tom  | kol  |    67 |  4 | vicky  | pune    |  45000 |
+|    5 | abd  | pune |    99 |  5 | brevis | ban     |  90000 |
++------+------+------+-------+----+--------+---------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select * from customers right join students on customers.id=students.id;
++------+--------+---------+--------+----+--------+-------+-------+
+| id   | name   | address | salary | id | name   | city  | marks |
++------+--------+---------+--------+----+--------+-------+-------+
+|    1 | smith  | hyd     |  50000 |  1 | sam    | hyd   |    80 |
+|    2 | jon    | kol     |  30000 |  2 | jack   | mum   |    77 |
+|    3 | devid  | mum     |  42000 |  3 | max    | ban   |    89 |
+|    4 | vicky  | pune    |  45000 |  4 | tom    | kol   |    67 |
+|    5 | brevis | ban     |  90000 |  5 | abd    | pune  |    99 |
+| NULL | NULL   | NULL    |   NULL |  6 | brevis | delhi |    50 |
++------+--------+---------+--------+----+--------+-------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select * from students cross join customers;
++----+--------+-------+-------+----+--------+---------+--------+
+| id | name   | city  | marks | id | name   | address | salary |
++----+--------+-------+-------+----+--------+---------+--------+
+|  1 | sam    | hyd   |    80 |  5 | brevis | ban     |  90000 |
+|  1 | sam    | hyd   |    80 |  4 | vicky  | pune    |  45000 |
+|  1 | sam    | hyd   |    80 |  3 | devid  | mum     |  42000 |
+|  1 | sam    | hyd   |    80 |  2 | jon    | kol     |  30000 |
+|  1 | sam    | hyd   |    80 |  1 | smith  | hyd     |  50000 |
+|  2 | jack   | mum   |    77 |  5 | brevis | ban     |  90000 |
+|  2 | jack   | mum   |    77 |  4 | vicky  | pune    |  45000 |
+|  2 | jack   | mum   |    77 |  3 | devid  | mum     |  42000 |
+|  2 | jack   | mum   |    77 |  2 | jon    | kol     |  30000 |
+|  2 | jack   | mum   |    77 |  1 | smith  | hyd     |  50000 |
+|  3 | max    | ban   |    89 |  5 | brevis | ban     |  90000 |
+|  3 | max    | ban   |    89 |  4 | vicky  | pune    |  45000 |
+|  3 | max    | ban   |    89 |  3 | devid  | mum     |  42000 |
+|  3 | max    | ban   |    89 |  2 | jon    | kol     |  30000 |
+|  3 | max    | ban   |    89 |  1 | smith  | hyd     |  50000 |
+|  4 | tom    | kol   |    67 |  5 | brevis | ban     |  90000 |
+|  4 | tom    | kol   |    67 |  4 | vicky  | pune    |  45000 |
+|  4 | tom    | kol   |    67 |  3 | devid  | mum     |  42000 |
+|  4 | tom    | kol   |    67 |  2 | jon    | kol     |  30000 |
+|  4 | tom    | kol   |    67 |  1 | smith  | hyd     |  50000 |
+|  5 | abd    | pune  |    99 |  5 | brevis | ban     |  90000 |
+|  5 | abd    | pune  |    99 |  4 | vicky  | pune    |  45000 |
+|  5 | abd    | pune  |    99 |  3 | devid  | mum     |  42000 |
+|  5 | abd    | pune  |    99 |  2 | jon    | kol     |  30000 |
+|  5 | abd    | pune  |    99 |  1 | smith  | hyd     |  50000 |
+|  6 | brevis | delhi |    50 |  5 | brevis | ban     |  90000 |
+|  6 | brevis | delhi |    50 |  4 | vicky  | pune    |  45000 |
+|  6 | brevis | delhi |    50 |  3 | devid  | mum     |  42000 |
+|  6 | brevis | delhi |    50 |  2 | jon    | kol     |  30000 |
+|  6 | brevis | delhi |    50 |  1 | smith  | hyd     |  50000 |
++----+--------+-------+-------+----+--------+---------+--------+
+30 rows in set (0.00 sec)
+
+mysql> select * from customers cross join students ;
++----+--------+---------+--------+----+--------+-------+-------+
+| id | name   | address | salary | id | name   | city  | marks |
++----+--------+---------+--------+----+--------+-------+-------+
+|  5 | brevis | ban     |  90000 |  1 | sam    | hyd   |    80 |
+|  4 | vicky  | pune    |  45000 |  1 | sam    | hyd   |    80 |
+|  3 | devid  | mum     |  42000 |  1 | sam    | hyd   |    80 |
+|  2 | jon    | kol     |  30000 |  1 | sam    | hyd   |    80 |
+|  1 | smith  | hyd     |  50000 |  1 | sam    | hyd   |    80 |
+|  5 | brevis | ban     |  90000 |  2 | jack   | mum   |    77 |
+|  4 | vicky  | pune    |  45000 |  2 | jack   | mum   |    77 |
+|  3 | devid  | mum     |  42000 |  2 | jack   | mum   |    77 |
+|  2 | jon    | kol     |  30000 |  2 | jack   | mum   |    77 |
+|  1 | smith  | hyd     |  50000 |  2 | jack   | mum   |    77 |
+|  5 | brevis | ban     |  90000 |  3 | max    | ban   |    89 |
+|  4 | vicky  | pune    |  45000 |  3 | max    | ban   |    89 |
+|  3 | devid  | mum     |  42000 |  3 | max    | ban   |    89 |
+|  2 | jon    | kol     |  30000 |  3 | max    | ban   |    89 |
+|  1 | smith  | hyd     |  50000 |  3 | max    | ban   |    89 |
+|  5 | brevis | ban     |  90000 |  4 | tom    | kol   |    67 |
+|  4 | vicky  | pune    |  45000 |  4 | tom    | kol   |    67 |
+|  3 | devid  | mum     |  42000 |  4 | tom    | kol   |    67 |
+|  2 | jon    | kol     |  30000 |  4 | tom    | kol   |    67 |
+|  1 | smith  | hyd     |  50000 |  4 | tom    | kol   |    67 |
+|  5 | brevis | ban     |  90000 |  5 | abd    | pune  |    99 |
+|  4 | vicky  | pune    |  45000 |  5 | abd    | pune  |    99 |
+|  3 | devid  | mum     |  42000 |  5 | abd    | pune  |    99 |
+|  2 | jon    | kol     |  30000 |  5 | abd    | pune  |    99 |
+|  1 | smith  | hyd     |  50000 |  5 | abd    | pune  |    99 |
+|  5 | brevis | ban     |  90000 |  6 | brevis | delhi |    50 |
+|  4 | vicky  | pune    |  45000 |  6 | brevis | delhi |    50 |
+|  3 | devid  | mum     |  42000 |  6 | brevis | delhi |    50 |
+|  2 | jon    | kol     |  30000 |  6 | brevis | delhi |    50 |
+|  1 | smith  | hyd     |  50000 |  6 | brevis | delhi |    50 |
++----+--------+---------+--------+----+--------+-------+-------+
+30 rows in set (0.00 sec)
+
+mysql>
