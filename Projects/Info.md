@@ -50,3 +50,35 @@ An end-to-end ML project that predicts salary from years of experience using Sim
 - API integrations with popular services
 - Webhook support for real-time communication
 - Fully customizable automation logic
+  
+  # 🎯 Student Marks Predictor – End-to-End Machine Learning Project
+
+## 📌 Project Overview
+This is an **end-to-end Machine Learning project** that predicts students' marks based on the number of study hours.  
+The project aims to help a university analyze whether increasing study hours actually improves students' academic performance using their historical data.
+
+The model is deployed as a **Flask web application** where users can input study hours and instantly get a predicted score.  
+Additionally, all user inputs are stored in a CSV file for future analysis.
+---
+## 🛠 Tech Stack
+- **Languages:** Python, HTML, CSS
+- **Libraries & Frameworks:**  
+  - [scikit-learn](https://scikit-learn.org/stable/) – for training the Linear Regression model  
+  - [Flask](https://flask.palletsprojects.com/) – for web application deployment  
+  - [Pandas](https://pandas.pydata.org/) – for data manipulation  
+  - [NumPy](https://numpy.org/) – for numerical operations  
+  - [Joblib](https://joblib.readthedocs.io/) – for model saving/loading  
+---
+## 🚀 Features
+- 📊 **Predict marks** based on daily study hours using a trained **Linear Regression** model.
+- 🛡 **Validation & error handling**:
+  - Rejects non-numeric characters.
+  - Disallows negative hours.
+  - Restricts input to a maximum of 24 hours.
+- 🌐 **User-friendly web interface** using Flask & HTML.
+- 📂 **CSV backup system** to store all user entries for further analysis.
+- 🎥 **Demo video & screenshots** included.
+---
+## 📈 Business Problem
+A university wanted to determine whether increasing study hours actually leads to better student performance.  
+Using the university's past performance data, this model provides insights to guide academic improvement strategies.
