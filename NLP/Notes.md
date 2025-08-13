@@ -20,13 +20,3 @@ In short, NLP is applied wherever machines need to understand or generate human 
     - Text Preprocessing – Cleans and prepares raw text for analysis.
     - Tasks: Stopword removal, stemming, lemmatization, part-of-speech tagging.
 Some NLP systems also include Speech Processing (speech-to-text, text-to-speech) as an
-
-
-
-
-
-
-
-
-
-Ask ChatGPT
